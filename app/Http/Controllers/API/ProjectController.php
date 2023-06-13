@@ -9,7 +9,8 @@ use App\Models\Project;
 class ProjectController extends Controller
 {
     public function index() {
-        $projects = Project::all();
+        $projects = Project::orderByDesc('id')->get();
+        //dd($projects);
 
         return response()->json([
             'success' => true,
