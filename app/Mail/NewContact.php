@@ -34,7 +34,7 @@ class NewContact extends Mailable
     {
         return new Envelope(
             replyTo: $this->lead->email,
-            subject: 'New Contact from ypur Portfolio',
+            subject: 'New Contact from your Portfolio',
         );
     }
 
