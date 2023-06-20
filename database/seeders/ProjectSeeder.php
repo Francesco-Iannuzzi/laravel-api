@@ -15,7 +15,7 @@ class ProjectSeeder extends Seeder
      *
      * @return void
      */
-    public function run () {
+    public function run (Faker $faker) {
         //db.php option
         $projects = config('db.projects');
         
@@ -27,7 +27,7 @@ class ProjectSeeder extends Seeder
             $new_project->made_by = $project['made_by'];
             $new_project->description = $project['description'];
             $new_project->creation_date = $project['date'];
-            $new_project->cover = 'placeholders/' . $project['cover'];
+            $new_project->cover = 'placeholders/' . $faker->image('storage/app/public/placeholders/', fullPath: false, category: 'Projects', word: $new_project->title, gray: true);
             $new_project->link = $project['link'];
             $new_project->code_link = $project['code_link'];
             $new_project->trace = $project['trace'];
